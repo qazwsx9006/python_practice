@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Hello world</h1>
+  <h3>猜猜我在想哪個數字</h3>
+  <h5>0~9選一個吧！</h5>
+  {{ current_time }} <br>
+  <span style="color: #f00;">{{ guess_result }}</span>
+  <form action="/hello/" method="post">
+    {% csrf_token %}
+    輸入數字
+    <input type="number" name="guess" min="0" max="9" style="width: 150px;" value="{{ input_number }}">
+    <input type="submit" value="猜">
+  </form>
+</body>
+</html>
